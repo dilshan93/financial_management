@@ -44,17 +44,7 @@ namespace financial_management
 
         private void Load_Categories(object sender, EventArgs e)
         {
-
-            lsCategories.Items.Clear();
-            foreach (BudgetStore.CategoryDbRow row in dbStore.Tables["CategoryDb"].Rows)
-            {
-                string[] items = new string[2];
-                items[0] = row["Id"].ToString();
-                items[1] = row["Name"].ToString();
-
-                ListViewItem listViewItem = new ListViewItem(items);
-                lsCategories.Items.Add(listViewItem);
-            }
+            RefreshListView();
         }
 
         public void RefreshListView()
@@ -69,6 +59,35 @@ namespace financial_management
                 ListViewItem listViewItem = new ListViewItem(items);
                 lsCategories.Items.Add(listViewItem);
             };
+            btnDelete.Enabled = false;
+
+        }
+
+        private void Enabled_Selected(object sender, EventArgs e)
+        {
+            if (lsCategories.SelectedItems.Count == 1)
+            {
+                btnDelete.Enabled = true;
+            }
+        }
+
+        private void Remove_Category(object sender, EventArgs e)
+        {
+            int id = int.Parse(lsCategories.SelectedItems[0].SubItems[0].Text);
+
+            DataTable dtable = dbStore.Tables["TransactionsDb"];
+            DataRow[] dRow = dtable.Select("CategoryId = '" + id + "'");
+            if (dRow.Length > 0)
+            {
+                MessageBox.Show(" Please Delete Transactions Under This Category First !", "Hey", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (id > 0)
+            {
+                CategoryModel categoryModel = new CategoryModel();
+                categoryModel.DeleteCategory(dbStore, id);
+                RefreshListView();
+            }
 
         }
     }

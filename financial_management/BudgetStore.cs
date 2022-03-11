@@ -4,5 +4,8 @@
 
     public partial class BudgetStore
     {
+        partial class TransactionsDbDataTable
+        {
+        }
     }
 }

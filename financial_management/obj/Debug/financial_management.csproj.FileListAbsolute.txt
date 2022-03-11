@@ -1,7 +1,6 @@
 C:\Users\scit\source\repos\financial_management\financial_management\bin\Debug\financial_management.exe.config
 C:\Users\scit\source\repos\financial_management\financial_management\bin\Debug\financial_management.exe
 C:\Users\scit\source\repos\financial_management\financial_management\bin\Debug\financial_management.pdb
-C:\Users\scit\source\repos\financial_management\financial_management\obj\Debug\financial_management.csproj.AssemblyReference.cache
 C:\Users\scit\source\repos\financial_management\financial_management\obj\Debug\financial_management.csproj.SuggestedBindingRedirects.cache
 C:\Users\scit\source\repos\financial_management\financial_management\obj\Debug\financial_management.Login.resources
 C:\Users\scit\source\repos\financial_management\financial_management\obj\Debug\financial_management.Properties.Resources.resources
@@ -14,3 +13,4 @@ C:\Users\scit\source\repos\financial_management\financial_management\obj\Debug\f
 C:\Users\scit\source\repos\financial_management\financial_management\obj\Debug\financial_management.View.resources
 C:\Users\scit\source\repos\financial_management\financial_management\obj\Debug\financial_management.Category.resources
 C:\Users\scit\source\repos\financial_management\financial_management\obj\Debug\financial_management.TransactionsView.resources
+C:\Users\scit\source\repos\financial_management\financial_management\obj\Debug\financial_management.UpdateTransactions.resources

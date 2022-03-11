@@ -26,6 +26,23 @@ namespace financial_management.Models
             return true;
         }
 
+        public TransactionDTO LoadTransactionData(int id, BudgetStore dbStore)
+        {
+
+            TransactionsDbRow transactionsDbRow = (TransactionsDbRow)dbStore.Tables["TransactionsDb"].Rows.Find(id);
+            TransactionDTO transactionDTO = new TransactionDTO();
+            transactionDTO.Id = transactionsDbRow.Id;
+            transactionDTO.Name = transactionsDbRow.Name;
+            transactionDTO.Type = transactionsDbRow.Type;
+            transactionDTO.Amount = transactionsDbRow.Amount;
+            transactionDTO.CategoryId = transactionsDbRow.CategoryId;
+            transactionDTO.CategoryName = transactionsDbRow.GetParentRow("CategoryDb_TransactionsDb")["Name"].ToString();
+            transactionDTO.Date = transactionsDbRow.Date;
+            transactionDTO.IsRepete = transactionsDbRow.Repete;
+
+            return transactionDTO;
+        }
+
         public BudgetStore GetDbStor()
         {
 
@@ -36,6 +53,29 @@ namespace financial_management.Models
       //      }
 
             return null;
+        }
+
+        public Boolean UpdateTransaction(TransactionDTO transactionDTO, BudgetStore dbStore, int id)
+        {
+
+            TransactionsDbRow row = (TransactionsDbRow)dbStore.Tables["TransactionsDb"].Rows.Find(id); ;
+            row.Name = transactionDTO.Name;
+            row.Type = transactionDTO.Type;
+            row.Amount = transactionDTO.Amount;
+            row.CategoryId = transactionDTO.CategoryId;
+            row.Date = transactionDTO.Date;
+            row.Repete = transactionDTO.IsRepete;
+            row.AcceptChanges();
+
+            return true;
+        }
+
+        public Boolean DeleteTransaction(BudgetStore dbStore, int id)
+        {
+
+            dbStore.Tables["TransactionsDb"].Rows.Remove(dbStore.Tables["TransactionsDb"].Rows.Find(id));
+
+            return true;
         }
 
     }

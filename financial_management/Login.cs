@@ -29,7 +29,8 @@ namespace financial_management
                 MessageBox.Show("Username Required", "Hey", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            else {
+            else
+            {
 
                 DashBordView dashBord = new DashBordView();
                 dashBord.Show();

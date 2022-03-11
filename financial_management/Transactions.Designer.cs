@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Transactions));
             this.txtTransName = new System.Windows.Forms.TextBox();
             this.comTransType = new System.Windows.Forms.ComboBox();
-            this.txtAmount = new System.Windows.Forms.TextBox();
+            this.txtTransAmount = new System.Windows.Forms.TextBox();
             this.btnAddTransaction = new System.Windows.Forms.Button();
             this.dtpTransDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,7 +49,7 @@
             this.txtTransName.Location = new System.Drawing.Point(165, 101);
             this.txtTransName.Name = "txtTransName";
             this.txtTransName.Size = new System.Drawing.Size(191, 22);
-            this.txtTransName.TabIndex = 0;
+            this.txtTransName.TabIndex = 1;
             // 
             // comTransType
             // 
@@ -61,12 +62,13 @@
             this.comTransType.Size = new System.Drawing.Size(121, 24);
             this.comTransType.TabIndex = 1;
             // 
-            // txtAmount
+            // txtTransAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(165, 256);
-            this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(160, 22);
-            this.txtAmount.TabIndex = 2;
+            this.txtTransAmount.Location = new System.Drawing.Point(165, 256);
+            this.txtTransAmount.Name = "txtTransAmount";
+            this.txtTransAmount.Size = new System.Drawing.Size(160, 22);
+            this.txtTransAmount.TabIndex = 2;
+            this.txtTransAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValidateAmountFeild);
             // 
             // btnAddTransaction
             // 
@@ -84,7 +86,7 @@
             this.dtpTransDate.Location = new System.Drawing.Point(165, 55);
             this.dtpTransDate.Name = "dtpTransDate";
             this.dtpTransDate.Size = new System.Drawing.Size(191, 22);
-            this.dtpTransDate.TabIndex = 4;
+            this.dtpTransDate.TabIndex = 0;
             this.dtpTransDate.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label1
@@ -175,11 +177,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtpTransDate);
             this.Controls.Add(this.btnAddTransaction);
-            this.Controls.Add(this.txtAmount);
+            this.Controls.Add(this.txtTransAmount);
             this.Controls.Add(this.comTransType);
             this.Controls.Add(this.txtTransName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Transactions";
-            this.Text = "Transactions";
+            this.Text = "Add New Transactions";
             this.Load += new System.EventHandler(this.Load_AddTransaction);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -190,7 +193,7 @@
 
         private System.Windows.Forms.TextBox txtTransName;
         private System.Windows.Forms.ComboBox comTransType;
-        private System.Windows.Forms.TextBox txtAmount;
+        private System.Windows.Forms.TextBox txtTransAmount;
         private System.Windows.Forms.Button btnAddTransaction;
         private System.Windows.Forms.DateTimePicker dtpTransDate;
         private System.Windows.Forms.Label label1;

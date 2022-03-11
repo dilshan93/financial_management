@@ -32,5 +32,13 @@ namespace financial_management.Models
             row.Name = name;
             row.AcceptChanges();
         }
+
+        public Boolean DeleteCategory(BudgetStore dbStore, int id)
+        {
+
+            dbStore.Tables["CategoryDb"].Rows.Remove(dbStore.Tables["CategoryDb"].Rows.Find(id));
+
+            return true;
+        }
     }
 }

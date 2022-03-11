@@ -46,5 +46,10 @@ namespace financial_management
             CategoryModel categoryModel = new CategoryModel();
             categoryModel.CreateCategory(dbStore, categoryDTO);
         }
+
+        private void Close_WindowsForm(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

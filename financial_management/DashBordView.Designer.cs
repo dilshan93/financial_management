@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBordView));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCategories = new System.Windows.Forms.Button();
             this.btnView = new System.Windows.Forms.Button();
@@ -81,8 +82,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "DashBordView";
-            this.Text = "DashBordView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Welcome to Expense Tracking";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Close_WindowsForm);
             this.Load += new System.EventHandler(this.Add_InitialData);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
