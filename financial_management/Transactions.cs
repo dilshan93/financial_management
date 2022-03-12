@@ -83,6 +83,7 @@ namespace financial_management
 
                 MessageBox.Show("Transaction Complete", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            Close();
 
         }
 

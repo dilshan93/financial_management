@@ -62,7 +62,7 @@
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(180, 51);
             this.btnView.TabIndex = 1;
-            this.btnView.Text = "View";
+            this.btnView.Text = "View Report";
             this.btnView.UseVisualStyleBackColor = true;
             this.btnView.Click += new System.EventHandler(this.OpenView);
             // 

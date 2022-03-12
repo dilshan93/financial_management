@@ -14,3 +14,4 @@ C:\Users\scit\source\repos\financial_management\financial_management\obj\Debug\f
 C:\Users\scit\source\repos\financial_management\financial_management\obj\Debug\financial_management.Category.resources
 C:\Users\scit\source\repos\financial_management\financial_management\obj\Debug\financial_management.TransactionsView.resources
 C:\Users\scit\source\repos\financial_management\financial_management\obj\Debug\financial_management.UpdateTransactions.resources
+C:\Users\scit\source\repos\financial_management\financial_management\obj\Debug\financial_management.csproj.AssemblyReference.cache

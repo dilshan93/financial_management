@@ -24,11 +24,11 @@ namespace financial_management
         private void SaveCategory(object sender, EventArgs e)
         {
 
-            String categoryName = this.txtCategoryName.Text;
+            String categoryName = txtCategoryName.Text;
             if (categoryName == null || categoryName == String.Empty)
             {
 
-                MessageBox.Show("Name Can't be Empty!", "Hey", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Name Can't be Empty!", "Category", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
@@ -38,8 +38,9 @@ namespace financial_management
             CategoryModel categoryModel = new CategoryModel();
             categoryModel.CreateCategory(dbStore, categoryDTO);
 
-            MessageBox.Show("Category successfully added!", "Hey", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Category successfully added!", "Category", MessageBoxButtons.OK, MessageBoxIcon.Information);
             RefreshListView();
+            txtCategoryName.Text = null;
         }
 
         private void Load_Categories(object sender, EventArgs e)
@@ -79,13 +80,14 @@ namespace financial_management
             DataRow[] dRow = dtable.Select("CategoryId = '" + id + "'");
             if (dRow.Length > 0)
             {
-                MessageBox.Show(" Please Delete Transactions Under This Category First !", "Hey", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(" Please Delete Transactions Under This Category First !", "Category", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             if (id > 0)
             {
                 CategoryModel categoryModel = new CategoryModel();
                 categoryModel.DeleteCategory(dbStore, id);
+                MessageBox.Show(" Selected Category Deleted !", "Category", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 RefreshListView();
             }
 

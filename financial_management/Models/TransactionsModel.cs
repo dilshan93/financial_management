@@ -43,17 +43,7 @@ namespace financial_management.Models
             return transactionDTO;
         }
 
-        public BudgetStore GetDbStor()
-        {
-
-       //     if (this.dbStore == null)
-       //     {
-
-       //         this.dbStore = new BudgetStore();
-      //      }
-
-            return null;
-        }
+      
 
         public Boolean UpdateTransaction(TransactionDTO transactionDTO, BudgetStore dbStore, int id)
         {

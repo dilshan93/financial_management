@@ -53,7 +53,7 @@ namespace financial_management
 
             if (name == null || amount == "" || comTransCategory.SelectedIndex == -1 || comTransType.SelectedIndex == -1)
             {
-                MessageBox.Show("Some fields are empty!", "Hey", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Some fields are empty!", "Transaction", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
@@ -77,9 +77,9 @@ namespace financial_management
             if (result == true)
             {
 
-                MessageBox.Show("Update Complete", "Hey", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Close();
+                MessageBox.Show("Update Complete", "Transaction", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            Close();
         }
 
         private void ValidateAmountFeild(object sender, KeyPressEventArgs e)
